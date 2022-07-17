@@ -1,0 +1,25 @@
+-Create a Flower Store Database
+
+CREATE TABLE Flowers (id integer primary key, Name text, Color Text, Quantity integer, price integer);
+
+INSERT INTO Flowers VALUES (1, "Roses", "Red", 5, 2);
+INSERT INTO Flowers VALUES (2, "Lily", "white", 3, 9);
+INSERT INTO Flowers VALUES (3, "Lotus", "Pink", 7, 1);
+INSERT INTO Flowers VALUES (4, "Sunflower", "Yellow", 6, 2);
+INSERT INTO Flowers VALUES (5, "Marygold", "Yellow", 8, 5);
+INSERT INTO Flowers VALUES (6, "Hibiscus", "Red", 4, 3);
+INSERT INTO Flowers VALUES (7, "Tulip", "Purple", 2, 9);
+INSERT INTO Flowers VALUES (8, "Jasmine", "White", 1, 2);
+INSERT INTO Flowers VALUES (9, "Daisy", "White", 3, 12);
+INSERT INTO Flowers VALUES (10, "Lavender", "Purple", 6, 12);
+INSERT INTO Flowers VALUES (11, "Dahlia", "Red", 15, 19);
+INSERT INTO Flowers VALUES (12, "Bluebell", "Blue", 8, 25);
+INSERT INTO Flowers VALUES (13, "Iris", "Purple", 13, 17);
+INSERT INTO Flowers VALUES (14, "Daffodil", "Yellow", 2, 12);
+INSERT INTO Flowers VALUES (15, "Poppy", "Red", 10, 15);
+
+- Display database where you order by price
+SELECT * From Flowers ORDER BY Price DESC; 
+
+- Show what is tha max quantity of a flower
+SELECT MAX(quantity) From Flowers;
