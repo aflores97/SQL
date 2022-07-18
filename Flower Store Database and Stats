@@ -21,5 +21,5 @@ INSERT INTO Flowers VALUES (15, "Poppy", "Red", 10, 15);
 - Display database where you order by price
 SELECT * From Flowers ORDER BY Price DESC; 
 
-- Show what is tha max quantity of a flower
+- Show what is the max quantity of a flower
 SELECT MAX(quantity) From Flowers;
