@@ -1,0 +1,23 @@
+CREATE TABLE book_store (id integer primary key, book_genre text, quantity integer, ratings integer, pages integer, price integer); 
+
+insert into book_store VALUES 
+(1, "mystery", 9, 10, 250, 15),
+(2, "romance", 8, 8, 200, 10),
+(3, "mythology", 4, 10, 300, 20),
+(4, "thriller", 8, 10, 115, 8),
+(5, "music", 10, 10, 50, 19),
+(6, "computer", 10, 10, 70, 30),
+(7, "math", 3, 10, 90, 20),
+(8, "history", 6, 7, 100, 13),
+(9, "art", 2, 9, 55, 35),
+(10, "horror", 8, 5, 350, 18),
+(11, "data", 10, 10, 210, 90),
+(12, "science", 7, 10, 105, 80),
+(13, "spanish", 10, 10, 260, 75),
+(14, "french", 10, 10, 150, 25),
+(15, "magazines", 6, 6, 50, 10)
+;
+
+SELECT * FROM book_store ORDER BY price asc;
+
+SELECT book_genre, SUM(quantity) FROM book_store WHERE pages >= 300; 
