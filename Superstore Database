@@ -57,3 +57,10 @@ WHERE item_name = "Air Purifier";
 SELECT item_name, price
 FROM superstore
 WHERE price > 49.99;
+
+What items in the store have a rating of 4.5 and up?
+
+SELECT item_name, average_rating
+FROM superstore
+WHERE average_rating >= 4.5
+ORDER BY average_rating desc;
