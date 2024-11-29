@@ -1,0 +1,76 @@
+#In this SQL, I'm querying a database with multiple tables in it to quantify statistics about customer and order data. 
+
+
+SELECT * FROM customers LIMIT 20;
+
+SELECT * FROM JanSales LIMIT 20;
+
+SELECT * FROM customers
+INNER JOIN JanSales
+ON customers.order_id = Jansales.orderid
+LIMIT 20;
+
+SELECT * FROM customers
+WHERE length(order_id) = 6
+AND order_id <> 'Order Id';
+
+SELECT COUNT(orderID)
+FROM JanSales
+WHERE length(orderid) = 6
+AND orderid <> 'Order Id';
+
+SELECT Count(orderid), Product
+FROM JanSales
+WHERE length(orderID) = 6
+AND orderid <> 'Order Id'
+AND Product = 'iPhone'
+;
+
+SELECT DISTINCT customers.acctnum
+FROM customers
+INNER JOIN FebSales
+ON customers.order_id = FebSales.orderID
+WHERE length(orderid) = 6
+AND orderid <> 'Order Id';
+
+SELECT DISTINCT Product, MIN(price) AS Price
+FROM JanSales
+WHERE length(orderid) = 6
+AND orderid <> 'Order Id';
+
+SELECT distinct product, price
+FROM JanSales
+ORDER BY price ASC LIMIT 1;
+
+SELECT sum(quantity)*price AS revenue
+,product
+FROM JanSales
+GROUP BY product;
+
+SELECT orderid, quantity, price, product
+FROM JanSales;
+
+SELECT SUM(quantity), price, product
+FROM JanSales
+GROUP BY product, price;
+
+SELECT quantity, product, SUM(quantity)*price AS revenue
+FROM FebSales
+WHERE location = '548 Lincoln St, Seattle, WA 98101'
+GROUP BY product;
+
+SELECT
+sum(Quantity),
+product,
+sum(quantity)*price as revenue
+FROM FebSales
+WHERE location = '548 Lincoln St, Seattle, WA 98101'
+GROUP BY product;
+
+SELECT COUNT(DISTINCT customers.acctnum), AVG(FebSales.quantity*Febsales.price) AS Average
+FROM Febsales
+LEFT JOIN customers
+ON FebSales.orderID = customers.order_id
+WHERE FebSales.Quantity > 2
+AND length(orderid) = 6
+AND orderid <> 'Order ID';
